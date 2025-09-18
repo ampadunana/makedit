@@ -123,7 +123,7 @@ export default function Pricing() {
         <div className="text-center mb-20">
           <div className="inline-flex items-center text-sm font-semibold text-slate-700 bg-slate-100 ring-1 ring-slate-200 rounded-full px-4 py-2 mb-6">
             <span className="w-2 h-2 bg-gradient-to-r from-blue-600 to-violet-600 rounded-full mr-2"></span>
-            Simple Pricing
+            Pricing
           </div>
           <h2 className="text-5xl md:text-6xl font-bold text-slate-900 mb-6 leading-tight">
             Choose your{' '}
@@ -156,16 +156,11 @@ export default function Pricing() {
             <span className={`text-lg font-semibold transition-colors ${isYearly ? 'text-slate-900' : 'text-slate-400'}`}>
               Yearly
             </span>
-            {isYearly && (
-              <span className="inline-flex items-center px-4 py-2 rounded-full text-sm font-semibold bg-gradient-to-r from-green-500 to-emerald-500 text-white shadow-lg">
-                Save up to 17%
-              </span>
-            )}
           </div>
         </div>
 
-        {/* PRICING CARDS — clean, aligned, like the screenshot */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch mb-20">
+        {/* PRICING CARDS — responsive for phones and tablets */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 items-stretch mb-20">
           {tiers.map((tier) => (
             <div key={tier.name} className="relative">
               {/* Pro badge centered and aligned */}
@@ -179,7 +174,7 @@ export default function Pricing() {
 
               <div
                 className={[
-                  'h-full rounded-2xl border p-8 flex flex-col',
+                  'h-full rounded-2xl border p-6 md:p-8 flex flex-col',
                   tier.popular
                     ? 'border-slate-300 shadow-[0_10px_30px_rgba(0,0,0,0.1)] bg-white ring-2 ring-blue-500/20'
                     : 'border-slate-200 bg-white',
@@ -194,15 +189,27 @@ export default function Pricing() {
                 {/* Price */}
                 <div className="mb-6">
                   <div className="flex items-end gap-2">
-                    <span className="text-4xl font-extrabold text-slate-900">
-                      {isYearly ? tier.yearlyPrice : tier.price}
+                    <span className="text-3xl md:text-4xl font-extrabold text-slate-900">
+                      {tier.name === 'Per Image' ? tier.price : (isYearly ? tier.yearlyPrice : tier.price)}
                     </span>
                     {tier.price !== 'Custom' && (
                       <span className="text-slate-500 text-sm leading-6">/{tier.period}</span>
                     )}
                   </div>
                   {isYearly && tier.savings && (
-                    <div className="mt-2 text-xs font-medium text-emerald-600">{tier.savings} billed yearly</div>
+                    <div className="mt-2 space-y-1">
+                      <div className="text-xs text-slate-600">
+                        $29/month • $348/year
+                      </div>
+                      <div className="text-xs font-medium text-emerald-600">
+                        {tier.savings}
+                      </div>
+                    </div>
+                  )}
+                  {tier.name === 'Per Image' && (
+                    <div className="mt-2 text-xs text-slate-500">
+                      Pay only for what you use
+                    </div>
                   )}
                 </div>
 
@@ -232,7 +239,7 @@ export default function Pricing() {
                 <Link
                   href="/login"
                   className={[
-                    'w-full inline-flex items-center justify-center rounded-xl px-6 py-3 text-sm font-bold transition',
+                    'w-full inline-flex items-center justify-center rounded-xl px-4 md:px-6 py-3 text-sm font-bold transition',
                     tier.popular
                       ? 'bg-gradient-to-r from-blue-600 to-violet-600 text-white hover:from-blue-700 hover:to-violet-700 shadow-lg hover:shadow-xl'
                       : 'border border-slate-300 text-slate-800 hover:bg-slate-50',
@@ -248,22 +255,22 @@ export default function Pricing() {
           ))}
         </div>
 
-        {/* === Compare Plans (unchanged, just column labels match the new plan names) === */}
+        {/* === Compare Plans (responsive for phones and tablets) === */}
         <div className="mb-20">
           <div className="text-center mb-12">
-            <h3 className="text-heading text-slate-900 mb-4">Compare Plans</h3>
+            <h3 className="text-2xl md:text-3xl font-bold text-slate-900 mb-4">Compare Plans</h3>
             <p className="text-slate-600">See exactly what&apos;s included in each plan</p>
           </div>
 
-          <div className="bg-white rounded-3xl border border-slate-200 overflow-hidden shadow-lg">
+          <div className="bg-white rounded-2xl md:rounded-3xl border border-slate-200 overflow-hidden shadow-lg">
             <div className="overflow-x-auto">
-              <table className="w-full">
+              <table className="w-full min-w-[600px]">
                 <thead className="bg-slate-50">
                   <tr>
-                    <th className="px-6 py-4 text-left text-sm font-semibold text-slate-900">Features</th>
-                    <th className="px-6 py-4 text-center text-sm font-semibold text-slate-900">Per Image</th>
-                    <th className="px-6 py-4 text-center text-sm font-semibold text-slate-900 bg-slate-50">Pro</th>
-                    <th className="px-6 py-4 text-center text-sm font-semibold text-slate-900">Custom</th>
+                    <th className="px-4 md:px-6 py-4 text-left text-sm font-semibold text-slate-900">Features</th>
+                    <th className="px-4 md:px-6 py-4 text-center text-sm font-semibold text-slate-900">Per Image</th>
+                    <th className="px-4 md:px-6 py-4 text-center text-sm font-semibold text-slate-900 bg-slate-50">Pro</th>
+                    <th className="px-4 md:px-6 py-4 text-center text-sm font-semibold text-slate-900">Custom</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-slate-200">
@@ -278,10 +285,10 @@ export default function Pricing() {
                     { feature: 'SLA', perImage: 'No', pro: 'No', custom: 'Yes' },
                   ].map((row, index) => (
                     <tr key={index} className="hover:bg-slate-50">
-                      <td className="px-6 py-4 text-sm font-medium text-slate-900">{row.feature}</td>
-                      <td className="px-6 py-4 text-sm text-slate-600 text-center">{row.perImage}</td>
-                      <td className="px-6 py-4 text-sm text-slate-600 text-center bg-slate-50">{row.pro}</td>
-                      <td className="px-6 py-4 text-sm text-slate-600 text-center">{row.custom}</td>
+                      <td className="px-4 md:px-6 py-4 text-sm font-medium text-slate-900">{row.feature}</td>
+                      <td className="px-4 md:px-6 py-4 text-sm text-slate-600 text-center">{row.perImage}</td>
+                      <td className="px-4 md:px-6 py-4 text-sm text-slate-600 text-center bg-slate-50">{row.pro}</td>
+                      <td className="px-4 md:px-6 py-4 text-sm text-slate-600 text-center">{row.custom}</td>
                     </tr>
                   ))}
                 </tbody>
@@ -290,11 +297,11 @@ export default function Pricing() {
           </div>
         </div>
 
-        {/* === FAQ (unchanged) === */}
+        {/* === FAQ (responsive for phones and tablets) === */}
         <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-16">
-            <h3 className="text-4xl font-bold text-slate-900 mb-6">Frequently Asked Questions</h3>
-            <p className="text-xl text-slate-600">Everything you need to know about Makedit</p>
+          <div className="text-center mb-12 md:mb-16">
+            <h3 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4 md:mb-6">Frequently Asked Questions</h3>
+            <p className="text-lg md:text-xl text-slate-600">Everything you need to know about Makedit</p>
           </div>
 
           <div className="grid grid-cols-1 gap-6">
@@ -305,9 +312,9 @@ export default function Pricing() {
               >
                 <button
                   onClick={() => toggleFaq(index)}
-                  className="w-full px-6 py-6 text-left flex items-center justify-between hover:bg-slate-50 transition-colors"
+                  className="w-full px-4 md:px-6 py-4 md:py-6 text-left flex items-center justify-between hover:bg-slate-50 transition-colors"
                 >
-                  <h4 className="text-lg font-semibold text-slate-900 pr-4">{faq.question}</h4>
+                  <h4 className="text-base md:text-lg font-semibold text-slate-900 pr-4">{faq.question}</h4>
                   <svg
                     className={`w-6 h-6 text-slate-500 transition-transform duration-300 ${
                       openFaqs.includes(index) ? 'rotate-180' : ''
@@ -320,8 +327,8 @@ export default function Pricing() {
                   </svg>
                 </button>
                 {openFaqs.includes(index) && (
-                  <div className="px-6 pb-6">
-                    <p className="text-slate-600 leading-relaxed">{faq.answer}</p>
+                  <div className="px-4 md:px-6 pb-4 md:pb-6">
+                    <p className="text-slate-600 leading-relaxed text-sm md:text-base">{faq.answer}</p>
                   </div>
                 )}
               </div>
@@ -329,21 +336,21 @@ export default function Pricing() {
           </div>
         </div>
 
-        {/* === Bottom CTA (kept) === */}
-        <div className="mt-24 text-center">
-          <div className="bg-gradient-to-br from-slate-900 to-slate-800 rounded-3xl p-16 text-white relative overflow-hidden">
+        {/* === Bottom CTA (responsive for phones and tablets) === */}
+        <div className="mt-16 md:mt-24 text-center">
+          <div className="bg-gradient-to-br from-slate-900 to-slate-800 rounded-2xl md:rounded-3xl p-8 md:p-16 text-white relative overflow-hidden">
             <div className="absolute inset-0 pointer-events-none">
               <div className="absolute top-10 left-10 w-32 h-32 bg-blue-500/20 rounded-full mix-blend-multiply filter blur-xl opacity-50"></div>
               <div className="absolute bottom-10 right-10 w-32 h-32 bg-purple-500/20 rounded-full mix-blend-multiply filter blur-xl opacity-50"></div>
             </div>
 
             <div className="relative">
-              <h3 className="text-4xl font-bold text-white mb-6">Ready to transform your product photos?</h3>
-              <p className="text-xl text-slate-300 mb-10 max-w-2xl mx-auto">
+              <h3 className="text-2xl md:text-4xl font-bold text-white mb-4 md:mb-6">Ready to transform your product photos?</h3>
+              <p className="text-lg md:text-xl text-slate-300 mb-6 md:mb-10 max-w-2xl mx-auto">
                 Join thousands of sellers who trust Makedit for their product photography needs.
               </p>
               <div className="flex justify-center">
-                <a href="/contact" className="btn-primary text-lg px-8 py-4">
+                <a href="/contact" className="btn-primary text-base md:text-lg px-6 md:px-8 py-3 md:py-4">
                   Contact Support
                 </a>
               </div>

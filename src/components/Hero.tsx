@@ -51,15 +51,15 @@ export default function Hero() {
           <div className="lg:col-span-6 animate-fade-in">
             <div className="relative">
               <BeforeAfterSlider
-                beforeImage="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=600&h=400&fit=crop&crop=center"
-                afterImage="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=600&h=400&fit=crop&crop=center&sat=-100&brightness=1.2"
+                beforeImage="/original.png"
+                afterImage="/ai-enhanced.png"
                 beforeLabel="Original"
                 afterLabel="AI Enhanced"
                 className="max-w-2xl mx-auto"
               />
               
               {/* Floating Elements */}
-              <div className="absolute -top-4 -right-4 bg-white rounded-2xl p-4 shadow-lg border border-slate-200">
+              <div className="absolute -top-4 -right-4 bg-white rounded-2xl p-4 shadow-lg border border-slate-200 z-10">
                 <div className="text-sm text-slate-600">
                   <div className="font-semibold text-slate-800">Marketplace Ready</div>
                   <div className="text-xs text-slate-500">Perfect for all platforms</div>
@@ -70,8 +70,8 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Scroll Indicator */}
-      <div className="absolute bottom-20 left-1/2 transform -translate-x-1/2 animate-bounce">
+      {/* Scroll Indicator - Hidden on mobile and tablet */}
+      <div className="absolute bottom-20 left-1/2 transform -translate-x-1/2 animate-bounce hidden xl:block">
         <svg className="w-6 h-6 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
         </svg>

@@ -74,36 +74,38 @@ export default function BeforeAfterSlider({
         onMouseUp={handleMouseUp}
         onTouchEnd={handleTouchEnd}
       >
-        {/* Before Image */}
+        {/* Original Image - Base Layer */}
         <div className="absolute inset-0">
           <img
             src={beforeImage}
-            alt="Before"
+            alt="Original"
             className="w-full h-full object-cover"
           />
-          <div className="absolute top-4 left-4 bg-black/70 text-white px-3 py-1 rounded-lg text-sm font-medium">
+          <div className="absolute top-1/2 left-1/2 transform translate-x-8 translate-y-8 bg-black/70 text-white px-3 py-1 rounded-lg text-sm font-medium">
             {beforeLabel}
           </div>
         </div>
 
-        {/* After Image */}
+        {/* AI Enhanced Image - Filter Overlay that slides across */}
         <div
           className="absolute inset-0 overflow-hidden"
-          style={{ width: `${sliderPosition}%` }}
+          style={{ 
+            clipPath: `polygon(0 0, ${sliderPosition}% 0, ${sliderPosition}% 100%, 0 100%)`
+          }}
         >
           <img
             src={afterImage}
-            alt="After"
+            alt="AI Enhanced"
             className="w-full h-full object-cover"
           />
-          <div className="absolute top-4 right-4 bg-black/70 text-white px-3 py-1 rounded-lg text-sm font-medium">
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-32 translate-y-8 bg-black/70 text-white px-3 py-1 rounded-lg text-sm font-medium">
             {afterLabel}
           </div>
         </div>
 
-        {/* Slider Line */}
+        {/* Slider Line - The dividing edge */}
         <div
-          className="absolute top-0 bottom-0 w-0.5 bg-white shadow-lg z-10"
+          className="absolute top-0 bottom-0 w-0.5 bg-white shadow-lg z-5"
           style={{ left: `${sliderPosition}%` }}
         >
           <div className="absolute -top-2 -left-2 w-4 h-4 bg-white rounded-full shadow-lg flex items-center justify-center">
@@ -116,7 +118,7 @@ export default function BeforeAfterSlider({
 
         {/* Drag Handle */}
         <div
-          className="absolute top-1/2 -translate-y-1/2 w-8 h-8 bg-white rounded-full shadow-lg flex items-center justify-center cursor-ew-resize z-20 transform -translate-x-1/2"
+          className="absolute top-1/2 -translate-y-1/2 w-8 h-8 bg-white rounded-full shadow-lg flex items-center justify-center cursor-ew-resize z-5 transform -translate-x-1/2"
           style={{ left: `${sliderPosition}%` }}
           onMouseDown={handleMouseDown}
           onTouchStart={handleMouseDown}
@@ -131,7 +133,7 @@ export default function BeforeAfterSlider({
               strokeLinecap="round"
               strokeLinejoin="round"
               strokeWidth={2}
-              d="M8 9l4-4 4 4m0 6l-4 4-4-4"
+              d="M9 8l-4 4 4 4m6-8l4 4-4 4"
             />
           </svg>
         </div>
@@ -140,10 +142,9 @@ export default function BeforeAfterSlider({
       {/* Instructions */}
       <div className="mt-4 text-center">
         <p className="text-sm text-slate-600">
-          Drag the slider to compare before and after
+          Drag the slider to apply the AI enhancement filter
         </p>
       </div>
     </div>
   );
 }
-
