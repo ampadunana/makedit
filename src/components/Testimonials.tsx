@@ -1,29 +1,29 @@
-import Image from 'next/image';
+import Image from &apos;next/image&apos;;
 
 export default function Testimonials() {
   const testimonials = [
     { 
-      name: 'Sarah Chen', 
-      role: 'E-commerce Manager', 
-      company: 'StyleCo',
-      quote: 'Makedit transformed our product photography workflow. What used to take hours now takes minutes, and the quality is consistently professional.',
-      image: 'https://images.unsplash.com/photo-1494790108755-2616b612b786?w=100&h=100&fit=crop&crop=face',
+      name: &apos;Sarah Chen&apos;, 
+      role: &apos;E-commerce Manager&apos;, 
+      company: &apos;StyleCo&apos;,
+      quote: &apos;Makedit transformed our product photography workflow. What used to take hours now takes minutes, and the quality is consistently professional.&apos;,
+      image: &apos;https://images.unsplash.com/photo-1494790108755-2616b612b786?w=100&h=100&fit=crop&crop=face&apos;,
       rating: 5
     },
     { 
-      name: 'Marcus Rodriguez', 
-      role: 'Founder', 
-      company: 'TechGear',
-      quote: 'We dropped studio costs by 80% and saw a 40% increase in conversion rates. Makedit pays for itself with the first sale.',
-      image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face',
+      name: &apos;Marcus Rodriguez&apos;, 
+      role: &apos;Founder&apos;, 
+      company: &apos;TechGear&apos;,
+      quote: &apos;We dropped studio costs by 80% and saw a 40% increase in conversion rates. Makedit pays for itself with the first sale.&apos;,
+      image: &apos;https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face&apos;,
       rating: 5
     },
     { 
-      name: 'Emily Watson', 
-      role: 'Marketing Director', 
-      company: 'Fashion Forward',
-      quote: 'The API integration was seamless. We can now process hundreds of product images automatically. Our team loves the consistency.',
-      image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop&crop=face',
+      name: &apos;Emily Watson&apos;, 
+      role: &apos;Marketing Director&apos;, 
+      company: &apos;Fashion Forward&apos;,
+      quote: &apos;The API integration was seamless. We can now process hundreds of product images automatically. Our team loves the consistency.&apos;,
+      image: &apos;https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop&crop=face&apos;,
       rating: 5
     },
   ];
@@ -37,7 +37,7 @@ export default function Testimonials() {
             Customer Stories
           </div>
           <h2 className="text-hero text-slate-900 mb-6">
-            Loved by{' '}
+            Loved by{&apos; &apos;}
             <span className="bg-gradient-to-r from-blue-600 to-violet-600 bg-clip-text text-transparent">
               thousands of sellers
             </span>

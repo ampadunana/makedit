@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useRef, useEffect } from 'react';
+import Image from 'next/image';
 
 interface BeforeAfterSliderProps {
   beforeImage: string;
@@ -76,9 +77,11 @@ export default function BeforeAfterSlider({
       >
         {/* Original Image - Base Layer */}
         <div className="absolute inset-0">
-          <img
+          <Image
             src={beforeImage}
             alt="Original"
+            width={672}
+            height={384}
             className="w-full h-full object-cover"
           />
           <div className="absolute top-1/2 left-1/2 transform translate-x-8 translate-y-8 bg-black/70 text-white px-3 py-1 rounded-lg text-sm font-medium">
@@ -93,9 +96,11 @@ export default function BeforeAfterSlider({
             clipPath: `polygon(0 0, ${sliderPosition}% 0, ${sliderPosition}% 100%, 0 100%)`
           }}
         >
-          <img
+          <Image
             src={afterImage}
             alt="AI Enhanced"
+            width={672}
+            height={384}
             className="w-full h-full object-cover"
           />
           <div className="absolute top-1/2 left-1/2 transform -translate-x-32 translate-y-8 bg-black/70 text-white px-3 py-1 rounded-lg text-sm font-medium">

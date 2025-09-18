@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 export default function Features() {
   const features = [
     {
@@ -123,9 +125,11 @@ export default function Features() {
                 <div className="relative group">
                   <div className="absolute -inset-4 bg-gradient-to-r from-blue-600 to-violet-600 rounded-3xl blur-2xl opacity-20 group-hover:opacity-30 transition-opacity"></div>
                   <div className="relative rounded-2xl overflow-hidden shadow-2xl">
-                    <img
+                    <Image
                       src={feature.image}
                       alt={feature.title}
+                      width={600}
+                      height={320}
                       className="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
