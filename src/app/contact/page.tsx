@@ -98,7 +98,7 @@ export default function ContactPage() {
             </div>
             <h1 className="text-2xl font-bold text-slate-900 mb-4">Message sent!</h1>
             <p className="text-slate-600 mb-8">
-              Thanks for reaching out. We'll get back to you within 24 hours.
+              Thanks for reaching out. We&apos;ll get back to you within 24 hours.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/" className="btn-primary">
@@ -131,7 +131,7 @@ export default function ContactPage() {
             <div className="text-center max-w-4xl mx-auto">
               <div className="inline-flex items-center text-sm font-semibold text-blue-700 bg-blue-50 ring-1 ring-blue-200 rounded-full px-4 py-2 mb-8">
                 <span className="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>
-                We're here to help
+                We&apos;re here to help
               </div>
               
               <h1 className="text-display text-slate-900 mb-8">
@@ -143,7 +143,7 @@ export default function ContactPage() {
               
               <p className="text-body-lg text-slate-600 mb-12 max-w-3xl mx-auto leading-relaxed">
                 Have questions about Makedit? Need help with your account? Want to discuss enterprise features? 
-                We're here to help and we respond within 24 hours.
+                We&apos;re here to help and we respond within 24 hours.
               </p>
             </div>
           </div>
@@ -154,7 +154,7 @@ export default function ContactPage() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <h2 className="text-hero text-slate-900 mb-6">
-                Choose how you'd like to reach us
+                Choose how you&apos;d like to reach us
               </h2>
               <p className="text-body-lg text-slate-600 max-w-3xl mx-auto">
                 We offer multiple ways to get in touch, so you can choose what works best for you.
@@ -162,7 +162,7 @@ export default function ContactPage() {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-              {contactMethods.map((method, index) => (
+              {contactMethods.map((method) => (
                 <div key={method.title} className="text-center group">
                   <div className="w-16 h-16 bg-gradient-to-br from-blue-50 to-violet-50 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-200">
                     {method.icon}
@@ -189,7 +189,7 @@ export default function ContactPage() {
                 Send us a message
               </h2>
               <p className="text-body-lg text-slate-600">
-                Fill out the form below and we'll get back to you as soon as possible.
+                Fill out the form below and we&apos;ll get back to you as soon as possible.
               </p>
             </div>
 
