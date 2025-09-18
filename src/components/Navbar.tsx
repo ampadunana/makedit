@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 
 export default function Navbar() {
@@ -34,9 +35,11 @@ export default function Navbar() {
       <nav className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-3 group">
-          <img 
+          <Image 
             src="/logo.png" 
             alt="Makedit Logo" 
+            width={40}
+            height={40}
             className="h-10 w-10"
           />
           <span className="text-lg font-bold tracking-tight text-slate-900 group-hover:text-blue-600 transition-colors">

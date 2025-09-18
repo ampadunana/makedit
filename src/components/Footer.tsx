@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function Footer() {
   const year = new Date().getFullYear();
@@ -67,9 +68,11 @@ export default function Footer() {
           {/* Brand Section */}
           <div className="lg:col-span-2">
             <div className="flex items-center gap-3 mb-6">
-              <img 
+              <Image 
                 src="/logo.png" 
                 alt="Makedit Logo" 
+                width={32}
+                height={32}
                 className="h-8 w-8"
               />
               <span className="text-xl font-bold tracking-tight">Makedit</span>
