@@ -58,13 +58,6 @@ export default function Hero() {
                 className="max-w-2xl mx-auto"
               />
               
-              {/* Floating Elements */}
-              <div className="absolute -top-4 -right-4 bg-white rounded-2xl p-4 shadow-lg border border-slate-200 z-10">
-                <div className="text-sm text-slate-600">
-                  <div className="font-semibold text-slate-800">Marketplace Ready</div>
-                  <div className="text-xs text-slate-500">Perfect for all platforms</div>
-                </div>
-              </div>
             </div>
           </div>
         </div>

@@ -137,7 +137,7 @@ export default function ContactPage() {
               <h1 className="text-display text-slate-900 mb-8">
                 Get in touch with our{' '}
                 <span className="bg-gradient-to-r from-blue-600 to-violet-600 bg-clip-text text-transparent">
-                  friendly team
+                  team
                 </span>
               </h1>
               
