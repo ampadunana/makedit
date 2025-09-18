@@ -1,5 +1,6 @@
 import Layout from '@/components/Layout';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function AboutPage() {
 
@@ -60,7 +61,7 @@ export default function AboutPage() {
               
               <p className="text-body-lg text-slate-600 mb-12 max-w-3xl mx-auto leading-relaxed">
                 We started Makedit because we saw too many amazing products held back by poor photography. 
-                Professional product photos shouldn't require a studio, expensive equipment, or design skills. 
+                Professional product photos shouldn&apos;t require a studio, expensive equipment, or design skills. 
                 They should just work.
               </p>
 
@@ -87,7 +88,7 @@ export default function AboutPage() {
                 </h2>
                 <p className="text-body-lg text-slate-600 mb-8 leading-relaxed">
                   We believe every seller deserves access to high-quality product photos that convert. 
-                  Whether you're just starting out or scaling your business, Makedit gives you the tools 
+                  Whether you&apos;re just starting out or scaling your business, Makedit gives you the tools 
                   to compete with the biggest brands.
                 </p>
                 <div className="space-y-4">
@@ -116,9 +117,11 @@ export default function AboutPage() {
                 <div className="relative">
                   <div className="absolute -inset-4 bg-gradient-to-r from-blue-600 to-violet-600 rounded-3xl blur-2xl opacity-20"></div>
                   <div className="relative rounded-2xl overflow-hidden shadow-2xl">
-                    <img
+                    <Image
                       src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=400&fit=crop&crop=center"
                       alt="Our mission in action"
+                      width={600}
+                      height={400}
                       className="w-full h-80 object-cover"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
@@ -149,7 +152,7 @@ export default function AboutPage() {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {values.map((value, index) => (
+              {values.map((value) => (
                 <div key={value.title} className="text-center group">
                   <div className="w-16 h-16 bg-gradient-to-br from-blue-50 to-violet-50 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-200">
                     {value.icon}
@@ -171,7 +174,7 @@ export default function AboutPage() {
               </h2>
               <div className="prose prose-lg max-w-none text-slate-600 leading-relaxed">
                 <p className="text-xl mb-6">
-                  We're a passionate team of designers, engineers, and entrepreneurs who believe that 
+                  We&apos;re a passionate team of designers, engineers, and entrepreneurs who believe that 
                   every seller deserves access to professional-quality product photography.
                 </p>
                 <p className="mb-6">
@@ -181,12 +184,12 @@ export default function AboutPage() {
                   and expensive studio costs.
                 </p>
                 <p className="mb-6">
-                  That's why we built Makedit – to democratize professional product photography. 
+                  That&apos;s why we built Makedit – to democratize professional product photography. 
                   We combine cutting-edge AI technology with deep understanding of e-commerce needs 
-                  to create a solution that's both powerful and accessible.
+                  to create a solution that&apos;s both powerful and accessible.
                 </p>
                 <p>
-                  Today, we're proud to help thousands of sellers across Shopify, Amazon, and Etsy 
+                  Today, we&apos;re proud to help thousands of sellers across Shopify, Amazon, and Etsy 
                   create stunning product images that drive sales and build trust with their customers. 
                   Our mission is simple: make professional product photography accessible to everyone.
                 </p>
