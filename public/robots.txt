@@ -1,0 +1,22 @@
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://makedit.com/sitemap.xml
+
+# Disallow admin and API routes
+Disallow: /api/
+Disallow: /admin/
+Disallow: /_next/
+Disallow: /private/
+
+# Allow important pages
+Allow: /
+Allow: /pricing
+Allow: /about
+Allow: /contact
+Allow: /login
+Allow: /get-started
+
+# Crawl delay (optional - be respectful to servers)
+Crawl-delay: 1
