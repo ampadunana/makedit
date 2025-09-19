@@ -103,7 +103,7 @@ export default function BeforeAfterSlider({
             height={384}
             className="w-full h-full object-cover"
           />
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-32 translate-y-8 bg-black/70 text-white px-3 py-1 rounded-lg text-sm font-medium">
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-16 sm:-translate-x-32 translate-y-8 bg-black/70 text-white px-3 py-1 rounded-lg text-sm font-medium">
             {afterLabel}
           </div>
         </div>
