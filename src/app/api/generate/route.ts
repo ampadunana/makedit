@@ -2,15 +2,14 @@ import { NextRequest, NextResponse } from 'next/server';
 import { GoogleGenerativeAI } from '@google/generative-ai';
 import sharp from 'sharp';
 
-// Try multiple ways to get the API key
-const apiKey = process.env.GEMINI_API_KEY || process.env.GOOGLE_API_KEY || 'AIzaSyDn98cnn0TedrgLLY7kntxuSLser41uIGw';
+// Resolve API key strictly from environment variables
+const resolvedApiKey = process.env.GEMINI_API_KEY || process.env.GOOGLE_API_KEY;
 
-console.log('API Key check:');
-console.log('GEMINI_API_KEY:', process.env.GEMINI_API_KEY ? 'Found' : 'Not found');
-console.log('GOOGLE_API_KEY:', process.env.GOOGLE_API_KEY ? 'Found' : 'Not found');
-console.log('Final API key:', apiKey ? 'Found' : 'Not found');
+if (!resolvedApiKey) {
+  throw new Error('Missing GEMINI_API_KEY/GOOGLE_API_KEY environment variable');
+}
 
-const genAI = new GoogleGenerativeAI(apiKey);
+const genAI = new GoogleGenerativeAI(resolvedApiKey);
 const model = genAI.getGenerativeModel({ model: 'gemini-2.5-flash-image-preview' });
 
 export async function POST(request: NextRequest) {
