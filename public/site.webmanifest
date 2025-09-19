@@ -4,16 +4,6 @@
   "description": "Transform DIY photos into studio-quality product images with AI",
   "icons": [
     {
-      "src": "/favicon-64x64.png",
-      "sizes": "64x64",
-      "type": "image/png"
-    },
-    {
-      "src": "/favicon-96x96.png",
-      "sizes": "96x96",
-      "type": "image/png"
-    },
-    {
       "src": "/favicon-128x128.png",
       "sizes": "128x128",
       "type": "image/png"
@@ -29,8 +19,28 @@
       "type": "image/png"
     },
     {
-      "src": "/android-chrome-512x512.png",
+      "src": "/favicon-384x384.png",
+      "sizes": "384x384",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon-512x512.png",
       "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon-768x768.png",
+      "sizes": "768x768",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon-1024x1024.png",
+      "sizes": "1024x1024",
+      "type": "image/png"
+    },
+    {
+      "src": "/android-chrome-512x512.png",
+      "sizes": "1024x1024",
       "type": "image/png"
     }
   ],
