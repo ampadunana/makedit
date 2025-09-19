@@ -48,18 +48,18 @@ export const metadata: Metadata = {
     google: 'your-google-verification-code-here',
   },
   alternates: {
-    canonical: 'https://makedit.com',
+    canonical: 'https://makedit.online',
   },
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://makedit.com',
+    url: 'https://makedit.online',
     siteName: 'Makedit',
     title: 'Makedit - Turn DIY photos into studio-quality product images',
     description: 'Transform messy backgrounds into clean, conversion-ready product shots for Shopify, Amazon, and Etsy. AI-powered photo editing in seconds.',
     images: [
       {
-        url: 'https://makedit.com/og-image.png',
+        url: 'https://makedit.online/og-image.png',
         width: 1200,
         height: 630,
         alt: 'Makedit - AI Product Photo Enhancement',
@@ -70,9 +70,9 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Makedit - Turn DIY photos into studio-quality product images',
     description: 'Transform messy backgrounds into clean, conversion-ready product shots for Shopify, Amazon, and Etsy. AI-powered photo editing in seconds.',
-    images: ['https://makedit.com/twitter-image.png'],
+    images: ['https://makedit.online/twitter-image.png'],
   },
-  sitemap: 'https://makedit.com/sitemap.xml',
+  sitemap: 'https://makedit.online/sitemap.xml',
   manifest: '/site.webmanifest',
   themeColor: '#2563eb',
 };

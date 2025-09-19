@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 
 # Sitemap location
-Sitemap: https://makedit.com/sitemap.xml
+Sitemap: https://makedit.online/sitemap.xml
 
 # Disallow admin and API routes
 Disallow: /api/
