@@ -2,18 +2,18 @@ import { NextRequest, NextResponse } from 'next/server';
 import { GoogleGenerativeAI } from '@google/generative-ai';
 import sharp from 'sharp';
 
-// Resolve API key strictly from environment variables
-const resolvedApiKey = process.env.GEMINI_API_KEY || process.env.GOOGLE_API_KEY;
-
-if (!resolvedApiKey) {
-  throw new Error('Missing GEMINI_API_KEY/GOOGLE_API_KEY environment variable');
-}
-
-const genAI = new GoogleGenerativeAI(resolvedApiKey);
-const model = genAI.getGenerativeModel({ model: 'gemini-2.5-flash-image-preview' });
+// Initialize Gemini client inside the handler to avoid build-time env errors
 
 export async function POST(request: NextRequest) {
   try {
+    const apiKey = process.env.GEMINI_API_KEY || process.env.GOOGLE_API_KEY;
+    if (!apiKey) {
+      return NextResponse.json({ error: 'Server misconfigured: missing GEMINI_API_KEY/GOOGLE_API_KEY' }, { status: 500 });
+    }
+
+    const genAI = new GoogleGenerativeAI(apiKey);
+    const model = genAI.getGenerativeModel({ model: 'gemini-2.5-flash-image-preview' });
+
     const data = await request.json();
     const { message, image, chat_history = [] } = data;
 
