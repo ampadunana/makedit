@@ -38,9 +38,9 @@ export default function Navbar() {
           <Image 
             src="/logo.png" 
             alt="Makedit Logo" 
-            width={40}
-            height={40}
-            className="h-10 w-10"
+            width={28}
+            height={28}
+            className="h-7 w-7"
           />
           <span className="text-lg font-bold tracking-tight text-slate-900 group-hover:text-blue-600 transition-colors">
             Makedit
