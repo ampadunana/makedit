@@ -20,17 +20,14 @@ export const metadata: Metadata = {
   description: "Transform messy backgrounds into clean, conversion-ready product shots for Shopify, Amazon, and Etsy. AI-powered photo editing in seconds.",
   icons: {
     icon: [
-      { url: '/favicon-128x128.png', sizes: '128x128', type: 'image/png' },
-      { url: '/favicon-192x192.png', sizes: '192x192', type: 'image/png' },
-      { url: '/favicon-256x256.png', sizes: '256x256', type: 'image/png' },
-      { url: '/favicon-384x384.png', sizes: '384x384', type: 'image/png' },
-      { url: '/favicon-512x512.png', sizes: '512x512', type: 'image/png' },
-      { url: '/favicon-768x768.png', sizes: '768x768', type: 'image/png' },
-      { url: '/favicon-1024x1024.png', sizes: '1024x1024', type: 'image/png' },
-      { url: '/favicon.ico', sizes: 'any' }
+      { url: '/favicon-256x256.png?v=2', sizes: '256x256', type: 'image/png' },
+      { url: '/favicon-512x512.png?v=2', sizes: '512x512', type: 'image/png' },
+      { url: '/favicon-1024x1024.png?v=2', sizes: '1024x1024', type: 'image/png' },
+      { url: '/favicon-2048x2048.png?v=2', sizes: '2048x2048', type: 'image/png' },
+      { url: '/favicon.ico?v=2', sizes: 'any' }
     ],
     apple: [
-      { url: '/apple-touch-icon.png', sizes: '1024x1024', type: 'image/png' }
+      { url: '/apple-touch-icon.png', sizes: '2048x2048', type: 'image/png' }
     ],
     other: [
       { rel: 'manifest', url: '/site.webmanifest' }
