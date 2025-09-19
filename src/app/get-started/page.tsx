@@ -1,5 +1,6 @@
 import Layout from '@/components/Layout';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function GetStartedPage() {
   const steps = [
@@ -14,6 +15,16 @@ export default function GetStartedPage() {
       <div className="pt-20">
         <section className="py-20 bg-white">
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div className="flex items-center justify-center gap-3 mb-8">
+              <Image 
+                src="/logo.png" 
+                alt="Makedit Logo" 
+                width={48}
+                height={48}
+                className="h-12 w-12"
+              />
+              <span className="text-3xl font-bold tracking-tight text-slate-900">Makedit</span>
+            </div>
             <h1 className="text-4xl md:text-5xl font-semibold tracking-tight text-slate-900">Get started in four steps</h1>
             <p className="mt-4 text-lg text-slate-600">No credit card required. Pay per image when you publish.</p>
           </div>
@@ -44,6 +55,7 @@ export default function GetStartedPage() {
     </Layout>
   );
 }
+
 
 
 
