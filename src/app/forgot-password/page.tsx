@@ -33,7 +33,7 @@ export default function ForgotPasswordPage() {
           <div className="mb-6">
             <h1 className="text-2xl font-semibold text-slate-900">Forgot password</h1>
             <p className="text-slate-600 mt-1">
-              Enter the email associated with your Makedit account. We'll send you a 6-digit code.
+              Enter the email associated with your Makedit account. We&apos;ll send you a 6-digit code.
             </p>
           </div>
 
