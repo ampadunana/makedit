@@ -16,10 +16,25 @@ export default function LoginPage() {
   const [isLoading, setIsLoading] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirm, setShowConfirm] = useState(false);
+  const [errors, setErrors] = useState<{password?: string, confirmPassword?: string}>({});
   const router = useRouter();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setErrors({});
+
+    if (!isLogin) {
+      // Signup validation
+      if (formData.password.length < 8) {
+        setErrors({password: 'Password must be at least 8 characters long.'});
+        return;
+      }
+      if (formData.password !== formData.confirmPassword) {
+        setErrors({confirmPassword: 'Passwords do not match.'});
+        return;
+      }
+    }
+
     setIsLoading(true);
 
     // Simulate API call
@@ -34,6 +49,12 @@ export default function LoginPage() {
       ...formData,
       [e.target.name]: e.target.value,
     });
+    // Clear errors when user starts typing
+    if (e.target.name === 'password') {
+      setErrors(prev => ({...prev, password: undefined}));
+    } else if (e.target.name === 'confirmPassword') {
+      setErrors(prev => ({...prev, confirmPassword: undefined}));
+    }
   };
 
   return (
@@ -156,6 +177,7 @@ export default function LoginPage() {
                     )}
                   </button>
                 </div>
+                {errors.password && <p className="text-sm text-red-600 mt-1">{errors.password}</p>}
               </div>
 
               {!isLogin && (
@@ -193,6 +215,7 @@ export default function LoginPage() {
                       )}
                     </button>
                   </div>
+                  {errors.confirmPassword && <p className="text-sm text-red-600 mt-1">{errors.confirmPassword}</p>}
                 </div>
               )}
             </div>
