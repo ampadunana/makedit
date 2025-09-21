@@ -62,7 +62,7 @@ export default function Features() {
             <span className="w-2 h-2 bg-blue-600 rounded-full mr-2"></span>
             Powerful Features
           </div>
-          <h2 className="text-hero text-slate-900 mb-6">
+          <h2 className="text-3xl md:text-4xl font-semibold text-slate-900 mb-6">
             Everything you need to create{' '}
             <span className="bg-gradient-to-r from-blue-600 to-violet-600 bg-clip-text text-transparent">
               professional product photos

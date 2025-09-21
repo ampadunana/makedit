@@ -125,7 +125,7 @@ export default function Pricing() {
             <span className="w-2 h-2 bg-gradient-to-r from-blue-600 to-violet-600 rounded-full mr-2"></span>
             Pricing
           </div>
-          <h2 className="text-5xl md:text-6xl font-bold text-slate-900 mb-6 leading-tight">
+          <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6 leading-tight">
             Choose your{' '}
             <span className="bg-gradient-to-r from-blue-600 to-violet-600 bg-clip-text text-transparent">
               perfect plan

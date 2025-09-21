@@ -51,7 +51,7 @@ export default function AboutPage() {
                 Our Story
               </div>
               
-              <h1 className="text-display text-slate-900 mb-8">
+              <h1 className="text-4xl md:text-5xl font-bold text-slate-900 mb-8">
                 Helping small sellers look{' '}
                 <span className="bg-gradient-to-r from-blue-600 to-violet-600 bg-clip-text text-transparent">
                   professional
@@ -82,8 +82,8 @@ export default function AboutPage() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
               <div className="animate-slide-up">
-                <h2 className="text-hero text-slate-900 mb-8">
-                  Our mission is simple: 
+                <h2 className="text-3xl md:text-4xl font-semibold text-slate-900 mb-8">
+                  Our mission is simple:
                   <span className="text-slate-600"> democratize professional product photography</span>
                 </h2>
                 <p className="text-body-lg text-slate-600 mb-8 leading-relaxed">
@@ -143,7 +143,7 @@ export default function AboutPage() {
         <section className="py-24 bg-gradient-to-br from-slate-50 to-blue-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
-              <h2 className="text-hero text-slate-900 mb-6">
+              <h2 className="text-3xl md:text-4xl font-semibold text-slate-900 mb-6">
                 What we stand for
               </h2>
               <p className="text-body-lg text-slate-600 max-w-3xl mx-auto">
@@ -169,7 +169,7 @@ export default function AboutPage() {
         <section className="py-24 bg-white">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center">
-              <h2 className="text-hero text-slate-900 mb-8">
+              <h2 className="text-3xl md:text-4xl font-semibold text-slate-900 mb-8">
                 Who we are
               </h2>
               <div className="prose prose-lg max-w-none text-slate-600 leading-relaxed">
@@ -201,7 +201,7 @@ export default function AboutPage() {
         {/* CTA Section */}
         <section className="py-24 bg-gradient-to-r from-slate-900 to-slate-800 text-white">
           <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-            <h2 className="text-hero text-white mb-6">
+            <h2 className="text-3xl md:text-4xl font-semibold text-white mb-6">
               Ready to transform your product photos?
             </h2>
             <p className="text-xl text-slate-300 mb-8 leading-relaxed">

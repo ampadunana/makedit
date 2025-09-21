@@ -134,7 +134,7 @@ export default function ContactPage() {
                 We&apos;re here to help
               </div>
               
-              <h1 className="text-display text-slate-900 mb-8">
+              <h1 className="text-4xl md:text-5xl font-bold text-slate-900 mb-8">
                 Get in touch with our{' '}
                 <span className="bg-gradient-to-r from-blue-600 to-violet-600 bg-clip-text text-transparent">
                   team
@@ -153,7 +153,7 @@ export default function ContactPage() {
         <section className="py-24 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
-              <h2 className="text-hero text-slate-900 mb-6">
+              <h2 className="text-3xl md:text-4xl font-semibold text-slate-900 mb-6">
                 Choose how you&apos;d like to reach us
               </h2>
               <p className="text-body-lg text-slate-600 max-w-3xl mx-auto">
@@ -185,7 +185,7 @@ export default function ContactPage() {
         <section className="py-24 bg-gradient-to-br from-slate-50 to-blue-50">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
-              <h2 className="text-hero text-slate-900 mb-6">
+              <h2 className="text-3xl md:text-4xl font-semibold text-slate-900 mb-6">
                 Send us a message
               </h2>
               <p className="text-body-lg text-slate-600">
@@ -314,7 +314,7 @@ export default function ContactPage() {
         <section className="py-24 bg-white">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
-              <h2 className="text-hero text-slate-900 mb-6">
+              <h2 className="text-3xl md:text-4xl font-semibold text-slate-900 mb-6">
                 Frequently Asked Questions
               </h2>
               <p className="text-body-lg text-slate-600">
@@ -340,7 +340,7 @@ export default function ContactPage() {
         {/* CTA Section */}
         <section className="py-24 bg-gradient-to-r from-slate-900 to-slate-800 text-white">
           <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-            <h2 className="text-hero text-white mb-6">
+            <h2 className="text-3xl md:text-4xl font-semibold text-white mb-6">
               Ready to get started?
             </h2>
             <p className="text-xl text-slate-300 mb-8 leading-relaxed">
