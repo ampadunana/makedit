@@ -34,15 +34,15 @@ export default function Navbar() {
     }`}>
       <nav className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-3 group">
-          <Image 
-            src="/logo.png" 
-            alt="Makedit Logo" 
-            width={28}
-            height={28}
-            className="h-7 w-7"
+        <Link href="/" className="flex items-center gap-3">
+          <Image
+            src="/logo.png"
+            alt="Makedit Logo"
+            width={24}
+            height={24}
+            className="h-6 w-6"
           />
-          <span className="text-lg font-bold tracking-tight text-slate-900 group-hover:text-blue-600 transition-colors">
+          <span className="text-lg font-bold tracking-tight text-slate-900">
             Makedit
           </span>
         </Link>
