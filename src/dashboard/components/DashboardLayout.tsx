@@ -4,8 +4,10 @@ import Topbar from "./Topbar";
 export default function DashboardShell({ children }: { children: React.ReactNode }) {
   return (
     <div className="flex min-h-screen w-full bg-[#111114]">
+      {/* Rounded corner overlay */}
+      <div className="fixed top-0 left-0 w-56 h-14 bg-[#0b0b0d] rounded-tl-2xl z-45"></div>
       {/* Fixed sidebar */}
-      <div className="fixed top-0 left-0 h-screen w-56">
+      <div className="fixed top-0 left-0 h-screen w-56 z-46">
         <Sidebar />
       </div>
 

@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import { Bell, X, Moon, Sun } from "lucide-react";
+import Square from "./Square";
 
 export default function Topbar() {
   const [showMessage, setShowMessage] = useState(true);
@@ -8,6 +9,7 @@ export default function Topbar() {
 
   return (
     <header className={`fixed top-0 left-56 right-0 h-14 bg-[#0b0b0d] border-b border-white/5 flex items-center px-6 z-50 ${showMessage ? 'justify-between' : 'justify-end'}`}>
+      <Square size={30} className="text-[#0b0b0d] absolute -left-4 top-10 z-10 rotate-45" />
       {showMessage && (
         <div className="flex items-center gap-2">
           <span className="text-sm text-gray-300">Welcome back, ready to transform your next product photo?</span>
