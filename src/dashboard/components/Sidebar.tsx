@@ -15,6 +15,7 @@ import {
   Settings,
 } from "lucide-react";
 import clsx from "clsx";
+import Image from "next/image";
 import { useDashboard } from "./DashboardContext";
 
 const Item = ({
@@ -80,7 +81,7 @@ export default function Sidebar() {
     >
       {/* Brand */}
       <div className="px-4 pt-5 pb-4 flex items-center gap-3 shrink-0">
-        <img src="/logo.png" alt="Makedit" className="h-6 w-6" />
+        <Image src="/logo.png" alt="Makedit" width={24} height={24} className="h-6 w-6" priority />
         {!sidebarCollapsed && (
           <div className="font-bold text-lg text-white">Makedit</div>
         )}

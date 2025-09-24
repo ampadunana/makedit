@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef, useState } from "react";
+import Image from "next/image";
 
 export default function BeforeAfter({
   before,
@@ -23,16 +24,22 @@ export default function BeforeAfter({
         setX(Math.min(100, Math.max(0, percent)));
       }}
     >
-      <img src={after} className="absolute inset-0 h-full w-full object-cover" />
+      <div className="absolute inset-0">
+        <Image src={after} alt="After image" fill className="object-cover" />
+      </div>
       <div
         className="absolute inset-0 overflow-hidden"
         style={{ width: `${x}%` }}
       >
-        <img
-          src={before}
-          className="h-full w-full object-cover"
-          draggable={false}
-        />
+        <div className="relative h-full w-full">
+          <Image
+            src={before}
+            alt="Before image"
+            fill
+            className="object-cover select-none"
+            draggable={false}
+          />
+        </div>
       </div>
 
       {/* handle */}

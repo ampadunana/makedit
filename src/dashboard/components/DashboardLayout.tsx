@@ -1,12 +1,13 @@
 import Sidebar from "./Sidebar";
 import Topbar from "./Topbar";
 import { useDashboard } from "./DashboardContext";
+import type { CSSProperties } from "react";
 
 export default function DashboardShell({ children }: { children: React.ReactNode }) {
   const { sidebarCollapsed } = useDashboard();
 
   return (
-    <div className="flex min-h-screen w-full bg-[#111114]" style={{ ['--sidebar-w' as any]: sidebarCollapsed ? '5rem' : '14rem' }}>
+    <div className="flex min-h-screen w-full bg-[#111114]" style={{ '--sidebar-w': (sidebarCollapsed ? '5rem' : '14rem') } as CSSProperties}>
       {/* Rounded corner overlay */}
       <div
         className="fixed top-0 left-0 h-14 bg-[#0b0b0d] rounded-tl-2xl z-45 overflow-hidden transform-gpu transition-[width] duration-300 ease-in-out"
