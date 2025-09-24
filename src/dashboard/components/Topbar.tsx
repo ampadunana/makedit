@@ -8,7 +8,10 @@ export default function Topbar() {
   const [isDark, setIsDark] = useState(true);
 
   return (
-    <header className={`fixed top-0 left-56 right-0 h-14 bg-[#0b0b0d] border-b border-white/5 flex items-center px-6 z-50 ${showMessage ? 'justify-between' : 'justify-end'}`}>
+    <header
+      className={`fixed top-0 right-0 h-14 bg-[#0b0b0d] border-b border-white/5 flex items-center px-6 z-50 transform-gpu transition-[left] duration-300 ease-in-out ${showMessage ? 'justify-between' : 'justify-end'}`}
+      style={{ left: 'calc(var(--sidebar-w) - 1px)', willChange: 'left' }}
+    >
       <Square size={30} className="text-[#0b0b0d] absolute -left-4 top-10 z-10 rotate-45" />
       {showMessage && (
         <div className="flex items-center gap-2">

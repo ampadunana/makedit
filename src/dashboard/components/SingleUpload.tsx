@@ -104,7 +104,7 @@ export default function SingleUpload() {
             {uploadedFile && (
               <div className="flex items-center justify-center space-x-2 text-green-400">
                 <Check size={20} />
-                <span>Ready to enhance</span>
+                <span>Ready to enhance back to upload</span>
               </div>
             )}
           </div>

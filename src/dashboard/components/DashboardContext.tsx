@@ -7,15 +7,18 @@ type ViewType = "home" | "single-upload" | "bulk-upload" | "api-integrations" | 
 interface DashboardContextType {
   currentView: ViewType;
   setCurrentView: (view: ViewType) => void;
+  sidebarCollapsed: boolean;
+  setSidebarCollapsed: (collapsed: boolean) => void;
 }
 
 const DashboardContext = createContext<DashboardContextType | undefined>(undefined);
 
 export function DashboardProvider({ children }: { children: ReactNode }) {
   const [currentView, setCurrentView] = useState<ViewType>("home");
+  const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
 
   return (
-    <DashboardContext.Provider value={{ currentView, setCurrentView }}>
+    <DashboardContext.Provider value={{ currentView, setCurrentView, sidebarCollapsed, setSidebarCollapsed }}>
       {children}
     </DashboardContext.Provider>
   );
