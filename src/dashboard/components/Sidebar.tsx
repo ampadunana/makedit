@@ -13,17 +13,21 @@ import {
   Settings,
 } from "lucide-react";
 import clsx from "clsx";
+import { useDashboard } from "./DashboardContext";
 
 const Item = ({
   active,
   icon: Icon,
   children,
+  onClick,
 }: {
   active?: boolean;
   icon: React.ElementType;
   children: React.ReactNode;
+  onClick?: () => void;
 }) => (
   <div
+    onClick={onClick}
     className={clsx(
       "group flex items-center gap-3 px-4 py-2 rounded-lg cursor-pointer transition-colors relative",
       active
@@ -48,6 +52,7 @@ const Item = ({
 
 export default function Sidebar() {
   const [open, setOpen] = useState(true);
+  const { currentView, setCurrentView } = useDashboard();
 
   return (
     <aside className="w-56 h-screen bg-[#0b0b0d] flex flex-col">
@@ -72,16 +77,16 @@ export default function Sidebar() {
 
         {open && (
           <div className="ml-8 mt-1 space-y-1">
-            <Item icon={Upload}>Single Upload</Item>
-            <Item icon={Blocks}>Bulk Upload</Item>
-            <Item icon={PlugZap}>API Integrations</Item>
+            <Item icon={Upload} active={currentView === "single-upload"} onClick={() => setCurrentView("single-upload")}>Single Upload</Item>
+            <Item icon={Blocks} active={currentView === "bulk-upload"} onClick={() => setCurrentView("bulk-upload")}>Bulk Upload</Item>
+            <Item icon={PlugZap} active={currentView === "api-integrations"} onClick={() => setCurrentView("api-integrations")}>API Integrations</Item>
           </div>
         )}
 
         {/* Standalone */}
-        <Item icon={FileText}>Templates</Item>
-        <Item icon={CreditCard}>Billing</Item>
-        <Item icon={Settings}>Settings</Item>
+        <Item icon={FileText} active={currentView === "templates"} onClick={() => setCurrentView("templates")}>Templates</Item>
+        <Item icon={CreditCard} active={currentView === "billing"} onClick={() => setCurrentView("billing")}>Billing</Item>
+        <Item icon={Settings} active={currentView === "settings"} onClick={() => setCurrentView("settings")}>Settings</Item>
       </nav>
 
       {/* Profile */}
