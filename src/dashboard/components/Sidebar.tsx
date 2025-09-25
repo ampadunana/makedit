@@ -6,6 +6,7 @@ import {
   ChevronUp,
   PanelLeftClose,
   PanelLeftOpen,
+  LayoutDashboard,
   Images,
   Upload,
   Blocks,
@@ -34,7 +35,7 @@ const Item = ({
   <div
     onClick={onClick}
     className={clsx(
-      "group flex items-center gap-3 px-4 py-2 rounded-lg cursor-pointer transition-colors relative",
+      "group flex items-center gap-3 px-4 h-10 rounded-lg cursor-pointer transition-colors relative",
       active
         ? "text-white font-semibold bg-white/5"
         : "text-gray-400 hover:text-gray-200 hover:bg-white/5"
@@ -44,14 +45,25 @@ const Item = ({
     {active && (
       <span className="absolute left-0 top-1 bottom-1 w-1 bg-primary-600 rounded-r" />
     )}
-    <Icon
-      size={18}
-      className={clsx(
-        "transition-colors",
-        active ? "text-primary-500" : "text-gray-500 group-hover:text-gray-300"
-      )}
-    />
-    {!sidebarCollapsed && <span className="text-sm">{children}</span>}
+    <span className="w-5 shrink-0 grid place-items-center">
+      <Icon
+        size={18}
+        className={clsx(
+          "transition-colors",
+          active ? "text-primary-500" : "text-gray-500 group-hover:text-gray-300"
+        )}
+      />
+    </span>
+    <span className="w-[160px] overflow-hidden flex-none">
+      <span
+        className={clsx(
+          "block text-sm leading-none transition-[opacity,transform] duration-300",
+          sidebarCollapsed ? "opacity-0 -translate-x-2" : "opacity-100 translate-x-0"
+        )}
+      >
+        {children}
+      </span>
+    </span>
   </div>
 );
 
@@ -74,10 +86,9 @@ export default function Sidebar() {
   return (
     <aside
       className={clsx(
-        "h-screen bg-[#0b0b0d] flex flex-col overflow-hidden transform-gpu transition-[width] duration-300 ease-in-out",
-        sidebarCollapsed ? "w-20" : "w-56"
+        "h-screen bg-[#0b0b0d] flex flex-col overflow-hidden transform-gpu w-full"
       )}
-      style={{ willChange: "width", contain: "layout paint" }}
+      style={{ contain: "layout paint" }}
     >
       {/* Brand */}
       <div className="px-4 pt-5 pb-4 flex items-center gap-3 shrink-0">
@@ -87,7 +98,7 @@ export default function Sidebar() {
         )}
       </div>
 
-      <nav className="px-2 pt-6 flex-1 min-h-0 overflow-y-auto overflow-x-hidden space-y-1" style={{ scrollbarGutter: "stable" }}>
+      <nav className="px-2 pt-6 flex-1 min-h-0 overflow-y-auto overflow-x-hidden space-y-1" style={{ scrollbarGutter: "stable", contain: "layout paint" }}>
         {/* Collapse Toggle */}
         <button
           onClick={() => setSidebarCollapsed(!sidebarCollapsed)}
@@ -99,16 +110,32 @@ export default function Sidebar() {
         {/* Studio Dropdown */}
         <button
           onClick={() => setOpen(!open)}
-          className={clsx(
-            "flex items-center justify-between w-full px-4 py-2 text-gray-300 hover:text-white hover:bg-white/5 rounded-lg transition",
-            sidebarCollapsed && "justify-start"
-          )}
+          className="relative flex items-center w-full px-4 py-2 text-gray-300 hover:text-white hover:bg-white/5 rounded-lg transition"
         >
-          <span className="flex items-center gap-2">
-            <Images size={18} />
-            {!sidebarCollapsed && <span className="text-sm">Studio</span>}
+          <span className="flex items-center gap-1.5">
+            <span className="w-5 shrink-0 grid place-items-center">
+              <LayoutDashboard size={18} />
+            </span>
+            <span className="overflow-hidden inline-block">
+              <span
+                className={clsx(
+                  "block text-sm leading-none transition-[opacity,transform] duration-300",
+                  sidebarCollapsed ? "opacity-0 -translate-x-2" : "opacity-100 translate-x-0"
+                )}
+              >
+                Studio
+              </span>
+            </span>
           </span>
-          {!sidebarCollapsed && (open ? <ChevronUp size={16} /> : <ChevronDown size={16} />)}
+          <span
+            className={clsx(
+              "absolute right-4 transition-opacity duration-300",
+              sidebarCollapsed ? "opacity-0 pointer-events-none" : "opacity-100"
+            )}
+            aria-hidden={sidebarCollapsed}
+          >
+            {open ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
+          </span>
         </button>
 
         <div
@@ -121,25 +148,25 @@ export default function Sidebar() {
           aria-hidden={!(!sidebarCollapsed && open)}
         >
           <Item
+            icon={Images}
+            active={currentView === "home"}
+            onClick={() => setCurrentView("home")}
+          >
+            Projects
+          </Item>
+          <Item
             icon={Upload}
             active={currentView === "single-upload"}
             onClick={() => setCurrentView("single-upload")}
           >
-            Single Upload
+            Single Uploads
           </Item>
           <Item
             icon={Blocks}
             active={currentView === "bulk-upload"}
             onClick={() => setCurrentView("bulk-upload")}
           >
-            Bulk Upload
-          </Item>
-          <Item
-            icon={PlugZap}
-            active={currentView === "api-integrations"}
-            onClick={() => setCurrentView("api-integrations")}
-          >
-            API Integrations
+            Bulk Uploads
           </Item>
         </div>
 
