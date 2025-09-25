@@ -109,7 +109,7 @@ export default function Sidebar() {
 
         {/* Studio Dropdown */}
         <button
-          onClick={() => setOpen(!open)}
+          onClick={() => (sidebarCollapsed ? setCurrentView("home") : setOpen(!open))}
           className="relative flex items-center w-full px-4 py-2 text-gray-300 hover:text-white hover:bg-white/5 rounded-lg transition"
         >
           <span className="flex items-center gap-1.5">
